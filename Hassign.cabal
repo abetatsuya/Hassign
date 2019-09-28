@@ -1,0 +1,65 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: bfb7241b023e5adbbf8d4b07a0e8b9b62fa4c94b9049f4a0a35047c48829a280
+
+name:           Hassign
+version:        0.1.0.0
+description:    Please see the README on Bitbucket at <https://bitbucket.org/abet/hassign/>
+homepage:       https://bitbucket.org/abet/hassign/
+bug-reports:    https://bitbucket.org/abet/hassign/
+author:         Tatsuya Abe
+maintainer:     abetatsuya@gmail.com
+copyright:      Tatsuya Abe
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: mercurial
+  location: https://bitbucket.org/abet/hassign/
+
+library
+  exposed-modules:
+  other-modules:
+      Paths_Hassign
+  hs-source-dirs:
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable hassign
+  main-is: HassignRoom.hs
+  other-modules:
+      Paths_Hassign
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Hassign
+    , base >=4.7 && <5
+    , safe >=0.3
+    , containers >= 0.6
+    , split >= 0.2
+    , sbv >= 7.0
+    , parsec >= 3.1
+    , strict >= 0.3
+    , ansi-terminal >= 0.8
+  default-language: Haskell2010
+
+test-suite Hassign-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_Hassign
+  hs-source-dirs:
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Hassign
+    , base >=4.7 && <5
+  default-language: Haskell2010
